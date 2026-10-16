@@ -54,11 +54,22 @@ struct PasswordInputView: View {
                 .padding(.leading, 15)
                 .padding(.trailing, 44)
                 
-                Button {
-                    isSecure.toggle()
-                } label: {
-                    Image(isSecure ? "u_eye-slash": "u_eye")
-                        .foregroundStyle(.gray)
+                HStack(spacing: 8) {
+                    if !password.isEmpty {
+                        Button {
+                            password = ""
+                        } label: {
+                            Image(.closeSquare)
+                                .foregroundStyle(.gray)
+                        }
+                    }
+
+                    Button {
+                        isSecure.toggle()
+                    } label: {
+                        Image(isSecure ? "u_eye-slash" : "u_eye")
+                            .foregroundStyle(.gray)
+                    }
                 }
                 .padding(.trailing, 15)
             }
