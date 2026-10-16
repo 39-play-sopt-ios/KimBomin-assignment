@@ -64,12 +64,13 @@ struct EmailInputView: View {
                 } label: {
                     Text("다음")
                         .font(.system(size: 18, weight: .bold))
-                        .foregroundStyle(.gray300)
+                        .foregroundStyle(isEmailEntered ? .white : .gray300)
                         .frame(height: 56)
                         .frame(maxWidth: .infinity)
-                        .background(.gray200)
+                        .background(isEmailEntered ? .starbucksgreen : .gray200)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
+                .disabled(!isEmailEntered)
                 .padding(.top, 383)
                 .padding(.horizontal, 22)
                 
@@ -80,6 +81,10 @@ struct EmailInputView: View {
             .background(.backgroundWhite)
         }
     }
+    
+    private var isEmailEntered: Bool {
+           !email.isEmpty
+       }
 }
 
 #Preview {

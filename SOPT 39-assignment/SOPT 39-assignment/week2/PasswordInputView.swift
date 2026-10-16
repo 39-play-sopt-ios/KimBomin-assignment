@@ -11,6 +11,7 @@ struct PasswordInputView: View {
     @State private var password = ""
     @State private var showSheet = false
     @State private var nickname = ""
+    
     let name : String
     
     var body: some View {
@@ -127,12 +128,13 @@ struct PasswordInputView: View {
             } label: {
                 Text("가입하기")
                     .font(.system(size: 18, weight: .bold))
-                    .foregroundStyle(.gray300)
+                    .foregroundStyle(isPasswordEntered ? .white : .gray300)
                     .frame(height: 56)
                     .frame(maxWidth: .infinity)
-                    .background(.gray200)
+                    .background(isPasswordEntered ? .starbucksgreen : .gray200)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
+            .disabled(!isPasswordEntered)
             
             
             
@@ -143,6 +145,10 @@ struct PasswordInputView: View {
         
         
     }
+    
+    private var isPasswordEntered: Bool {
+           !password.isEmpty
+       }
 }
 
 #Preview {
