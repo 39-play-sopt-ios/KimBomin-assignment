@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    let nickname: String
     var body: some View {
         VStack(alignment: .center, spacing: 0){
             Image(.starbuckslogos)
                 .padding(.top, 69)
             
-            Text("이름님\n가입을 환영합니다!")
+            Text("\(nickname)님\n가입을 환영합니다!")
                 .font(.system(size: 23,weight: .bold))
                 .foregroundStyle(.white)
                 .padding(.top, 93)
@@ -39,5 +40,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView()
+    WelcomeView(nickname: "상엽")
 }

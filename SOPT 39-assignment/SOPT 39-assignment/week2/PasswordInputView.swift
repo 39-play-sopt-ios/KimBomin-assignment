@@ -68,7 +68,7 @@ struct PasswordInputView: View {
             Button{
                 showSheet = true
             } label:{
-                Text("닉네임 설정")
+                Text(nickname.isEmpty ? "닉네임 설정" : nickname)
                     .font(.system(size: 12, weight: .regular))
                     .padding(.top, 40)
                     .foregroundStyle(.gray)
@@ -123,7 +123,7 @@ struct PasswordInputView: View {
             Spacer()
             
             NavigationLink{
-                WelcomeView()
+                WelcomeView(nickname: nickname)
             } label: {
                 Text("가입하기")
                     .font(.system(size: 18, weight: .bold))
