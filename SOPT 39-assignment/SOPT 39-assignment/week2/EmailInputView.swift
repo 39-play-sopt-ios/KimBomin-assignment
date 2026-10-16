@@ -32,18 +32,31 @@ struct EmailInputView: View {
                     .foregroundStyle(.gray)
                 
                 
-                TextField("이메일", text: $email,
-                          prompt: Text("email@address.com")
-                    .font(.system(size: 12, weight: .regular))
-                    .foregroundStyle(.gray200)
-                    
-                )
-                .font(.system(size: 14, weight: .regular))
-                .textContentType(.emailAddress)
-                .keyboardType(.emailAddress)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .padding(.horizontal, 15)
+                ZStack(alignment: .trailing) {
+
+                    TextField("이메일", text: $email,
+                              prompt: Text("email@address.com")
+                        .font(.system(size: 12, weight: .regular))
+                        .foregroundStyle(.gray200)
+                    )
+                    .font(.system(size: 14, weight: .regular))
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .padding(.leading, 15)
+                    .padding(.trailing, 44)
+
+                    if !email.isEmpty {
+                        Button {
+                            email = ""
+                        } label: {
+                            Image(.closeSquare)
+                           
+                        }
+                        .padding(.trailing, 15)
+                    }
+                }
                 .frame(height: 44)
                 .background(.white)
                 .clipShape(
@@ -52,7 +65,6 @@ struct EmailInputView: View {
                 .overlay {
                     RoundedRectangle(cornerRadius: 5)
                         .stroke(.gray.opacity(0.1), lineWidth: 0.5)
-                
                 }
                 .padding(.horizontal, 31)
                 .padding(.top, 27)
