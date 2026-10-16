@@ -14,19 +14,19 @@ struct EmailInputView: View {
             VStack(alignment: .leading, spacing: 0){
                 
                 Text("로그인/가입하려는 이메일을 입력해주세요")
-                    .font(.system(size: 23, weight: .bold))
+                    .font(.head2)
                     .padding(.top, 109)
                     .padding(.horizontal,30)
                 
                 Text("결제 등 중요 알림, 로그인, 비밀번호 찾기에 필요해요")
-                    .font(.system(size: 12, weight: .regular))
+                    .font(.body2)
                     .padding(.top, 13)
                     .padding(.horizontal,30)
                     .foregroundStyle(.gray)
                 
                 
                 Text("사용 중인 이메일을 입력해주세요")
-                    .font(.system(size: 12, weight: .regular))
+                    .font(.body2)
                     .padding(.top, 5)
                     .padding(.horizontal,30)
                     .foregroundStyle(.gray)
@@ -36,10 +36,10 @@ struct EmailInputView: View {
 
                     TextField("이메일", text: $email,
                               prompt: Text("email@address.com")
-                        .font(.system(size: 12, weight: .regular))
+                        .font(.body2)
                         .foregroundStyle(.gray200)
                     )
-                    .font(.system(size: 14, weight: .regular))
+                    .font(.pretendard(.regular, size: 14))
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
                     .textInputAutocapitalization(.never)
@@ -75,7 +75,7 @@ struct EmailInputView: View {
                     PasswordInputView(name: email)
                 } label: {
                     Text("다음")
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.subhead1)
                         .foregroundStyle(isEmailEntered ? .white : .gray300)
                         .frame(height: 56)
                         .frame(maxWidth: .infinity)

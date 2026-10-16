@@ -15,7 +15,7 @@ struct WelcomeView: View {
                 .padding(.top, 69)
             
             Text("\(nickname)님\n가입을 환영합니다!")
-                .font(.system(size: 23,weight: .bold))
+                .font(.head2)
                 .foregroundStyle(.white)
                 .padding(.top, 93)
                 .multilineTextAlignment(.center)
@@ -25,7 +25,7 @@ struct WelcomeView: View {
             Button{
             } label: {
                 Text("메인으로")
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.subhead1)
                     .foregroundStyle(.darkGreen)
                     .frame(height: 56)
                     .frame(maxWidth: .infinity)

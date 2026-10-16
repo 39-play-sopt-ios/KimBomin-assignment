@@ -20,12 +20,12 @@ struct PasswordInputView: View {
         VStack(alignment: .leading, spacing: 0){
             
             Text("사용할 비밀번호를\n입력해주세요")
-                .font(.system(size: 23, weight: .bold))
+                .font(.head2)
                 .padding(.top, 109)
             
             
             Text("\(name)로 가입중")
-                .font(.system(size: 12, weight: .regular))
+                .font(.body2)
                 .padding(.top, 13)
                 .foregroundStyle(.gray)
             
@@ -36,18 +36,18 @@ struct PasswordInputView: View {
                     if isSecure {
                         SecureField("비밀번호", text: $password,
                                     prompt: Text("비밀번호 입력")
-                            .font(.system(size: 12, weight: .regular))
+                            .font(.body2)
                             .foregroundStyle(.gray200)
                         )
                     } else {
                         TextField("비밀번호", text: $password,
                                   prompt: Text("비밀번호 입력")
-                            .font(.system(size: 12, weight: .regular))
+                            .font(.body2)
                             .foregroundStyle(.gray200)
                         )
                     }
                 }
-                .font(.system(size: 14, weight: .regular))
+                .font(.pretendard(.regular, size: 14))
                 .textContentType(.password)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
@@ -93,7 +93,7 @@ struct PasswordInputView: View {
                     .frame(width: 13, height: 13)
                 
                 Text("영문, 숫자, 특수문자 포함 10글자 이상")
-                    .font(.system(size: 12, weight: .regular))
+                    .font(.body2)
                     .foregroundStyle(.gray)
             }
             .padding(.top, 13)
@@ -102,7 +102,7 @@ struct PasswordInputView: View {
                 showSheet = true
             } label:{
                 Text(nickname.isEmpty ? "닉네임 설정" : nickname)
-                    .font(.system(size: 12, weight: .regular))
+                    .font(.body2)
                     .padding(.top, 40)
                     .foregroundStyle(.gray)
                     .underline()
@@ -111,7 +111,7 @@ struct PasswordInputView: View {
             .sheet(isPresented: $showSheet){
                 VStack(alignment: .leading, spacing: 0){
                     Text("닉네임을 입력해주세요")
-                        .font(.system(size: 18, weight: .semibold))
+                        .font(.subhead1)
                         .foregroundStyle(.white)
                         .padding(.top, 40)
                         .padding(.horizontal, 21)
@@ -120,7 +120,7 @@ struct PasswordInputView: View {
                               prompt: Text("닉네임")
                         .foregroundStyle(.gray200)
                     )
-                    .font(.system(size: 14, weight: .regular))
+                    .font(.pretendard(.regular, size: 14))
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .padding(.horizontal, 15)
@@ -136,7 +136,7 @@ struct PasswordInputView: View {
                         showSheet = false
                     } label: {
                         Text("완료")
-                            .font(.system(size: 16, weight: .regular))
+                            .font(.pretendard(.regular, size: 16))
                             .foregroundStyle(.darkGreen)
                             .frame(height: 51)
                             .frame(maxWidth: .infinity)
@@ -159,7 +159,7 @@ struct PasswordInputView: View {
                 WelcomeView(nickname: nickname)
             } label: {
                 Text("가입하기")
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.subhead1)
                     .foregroundStyle(isPasswordEntered ? .white : .gray300)
                     .frame(height: 56)
                     .frame(maxWidth: .infinity)
