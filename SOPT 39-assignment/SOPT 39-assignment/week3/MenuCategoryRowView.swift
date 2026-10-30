@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct MenuCategoryRowView: View {
+    let item: MenuCategoryModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 21){
+            Image(item.imageName)
+                .resizable()
+                .frame(width: 61, height: 61)
+            
+            Text(item.name)
+                .font(.subhead3)
+            
+            Spacer()
+        }
+        .padding(.horizontal, 28)
     }
 }
 
 #Preview {
-    MenuCategoryRowView()
+    MenuCategoryRowView(item: .init(name: "아무ㄴ거나" , imageName: "beverage2"))
 }

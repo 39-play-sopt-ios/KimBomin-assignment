@@ -9,7 +9,31 @@ import SwiftUI
 
 struct StoreSelectBarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing:0){
+            HStack(spacing: 0){
+                Text("성수역")
+                    .font(.medium2)
+                    .foregroundStyle(.white)
+                Spacer()
+                Image(.chevronBottomWhite)
+            }
+            .padding(.vertical, 4)
+            .border(.black, width: 1)
+            .overlay(alignment: .bottom) {
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundStyle(.gray6B)
+            }
+            
+            Spacer()
+            
+            Image(.buyEmpty)
+                .resizable()
+                .frame(width: 43, height: 42)
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 9)
+        .background(.backgroundBlack)
     }
 }
 
