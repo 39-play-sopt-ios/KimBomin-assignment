@@ -53,7 +53,5 @@ struct MyMenuView: View {
             
             StoreSelectBarView()
         }
-        
-        
     }
 }

@@ -48,9 +48,6 @@ struct NewMenuView: View {
             StoreSelectBarView()
         }
         .navigationBarBackButtonHidden(true)
-        
     }
-    
-    
 }
 

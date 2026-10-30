@@ -57,6 +57,7 @@ struct MenuDetailView: View {
                             .foregroundStyle(.mainGreen)
                         Spacer()
                     }
+                    
                     Text("Iced Castella Sweet Potato Milk")
                         .font(.body2)
                         .padding(.bottom, 20)
@@ -89,9 +90,6 @@ struct MenuDetailView: View {
                     .padding(.vertical, 21)
                     .frame(width: 333, height: 76)
                     .background(.backgroundWhite)
-                
-                
-                
             }
             .toolbar(.hidden, for: .tabBar)
             .navigationBarBackButtonHidden(true)

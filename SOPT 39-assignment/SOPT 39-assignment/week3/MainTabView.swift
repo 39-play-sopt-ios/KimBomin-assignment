@@ -19,7 +19,6 @@ struct MainTabView: View {
     @State var selectedTab : Tab = .order
     var body: some View {
             VStack{
-                
                 switch selectedTab {
                 case .home:
                     HomeView()
@@ -34,6 +33,5 @@ struct MainTabView: View {
                 }
                 NavigationBarView(selectedTab: $selectedTab)
             }
-        
     }
 }
