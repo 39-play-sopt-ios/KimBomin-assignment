@@ -69,6 +69,7 @@ struct OrderView: View {
                     } label: {
                         MenuCategoryRowView(item: category)
                     }
+                    
                     .listRowSeparator(.hidden)
                     .listRowInsets(
                         EdgeInsets(
@@ -84,9 +85,4 @@ struct OrderView: View {
         }
         .navigationBarBackButtonHidden(true)
     }
-}
-
-
-#Preview {
-    OrderView()
 }

@@ -14,27 +14,26 @@ enum Tab{
     case gift
     case other
 }
+
 struct MainTabView: View {
     @State var selectedTab : Tab = .order
     var body: some View {
-        VStack{
-            
-            switch selectedTab {
-            case .home:
-                HomeView()
-            case .pay:
-                PayView()
-            case .order:
+            VStack{
+                
+                switch selectedTab {
+                case .home:
+                    HomeView()
+                case .pay:
+                    PayView()
+                case .order:
                     OrderView()
-            case .gift:
-                GiftView()
-            case .other:
-                OtherView()
+                case .gift:
+                    GiftView()
+                case .other:
+                    OtherView()
+                }
+                NavigationBarView(selectedTab: $selectedTab)
             }
-            NavigationBarView(selectedTab: $selectedTab)
-        }
+        
     }
 }
-    #Preview {
-        MainTabView()
-    }

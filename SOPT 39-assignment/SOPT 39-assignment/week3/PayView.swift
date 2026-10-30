@@ -14,7 +14,3 @@ struct PayView: View {
         Spacer()
     }
 }
-
-#Preview {
-    PayView()
-}

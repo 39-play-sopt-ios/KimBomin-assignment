@@ -11,7 +11,7 @@ import SwiftUI
 struct SOPT_39_assignmentApp: App {
     var body: some Scene {
         WindowGroup {
-            EmailInputView()
+           MainTabView()
         }
     }
 }

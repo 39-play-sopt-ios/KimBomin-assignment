@@ -14,7 +14,3 @@ struct OtherView: View {
         Spacer()
     }
 }
-
-#Preview {
-    OtherView()
-}

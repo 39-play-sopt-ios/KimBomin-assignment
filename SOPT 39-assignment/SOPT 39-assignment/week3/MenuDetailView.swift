@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuDetailView: View {
     var body: some View {
-        NavigationStack{
+        ScrollView{
             VStack(spacing:0){
                 ZStack(alignment: .top){
                     Image(.IMG_3899_1)
@@ -32,7 +32,6 @@ struct MenuDetailView: View {
                             }
                         }
                         
-                        
                         Spacer()
                         
                         ZStack {
@@ -48,7 +47,6 @@ struct MenuDetailView: View {
                     .padding(.horizontal, 21)
                     .padding(.vertical, 14)
                 }
-                .navigationBarBackButtonHidden(true)
                 
                 VStack(alignment: .leading, spacing: 0) {
                     HStack(spacing: 9) {
@@ -82,6 +80,8 @@ struct MenuDetailView: View {
                             .stroke(.gray200, lineWidth: 1)
                     )
                 
+                Spacer()
+                
                 Text("*컬러 드리즐은 시간이 지날수록 번지는 현상이 있으나 음료 품질과는 무관하니 안심하고 드세요.")
                     .font(.cap4)
                     .foregroundStyle(.gray6B)
@@ -90,38 +90,13 @@ struct MenuDetailView: View {
                     .frame(width: 333, height: 76)
                     .background(.backgroundWhite)
                 
-                HStack(spacing: 26) {
-                    Button {
-                    } label: {
-                        Image(systemName: "heart")
-                            .font(.system(size: 24))
-                            .foregroundStyle(.gray)
-                    }
-                    
-                    Button {
-                    } label: {
-                        Text("주문하기")
-                            .font(.subhead2)
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 50)
-                            .background(.starbucksgreen)
-                            .clipShape(RoundedRectangle(cornerRadius: 30))
-                    }
-                }
-                .padding(.horizontal, 28)
-                .padding(.top, 18)
-                .background(.white)
-                .shadow(color: .black.opacity(0.08), radius: 8, y: -4)
+                
                 
             }
             .toolbar(.hidden, for: .tabBar)
             .navigationBarBackButtonHidden(true)
         }
+        OrderBottomButton()
     }
       
-}
-
-#Preview {
-    MenuDetailView()
 }

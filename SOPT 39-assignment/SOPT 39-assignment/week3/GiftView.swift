@@ -14,7 +14,3 @@ struct GiftView: View {
         Spacer()
     }
 }
-
-#Preview {
-    GiftView()
-}

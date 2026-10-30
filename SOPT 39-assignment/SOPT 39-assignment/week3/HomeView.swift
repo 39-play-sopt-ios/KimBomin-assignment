@@ -14,7 +14,3 @@ struct HomeView: View {
         Spacer()
     }
 }
-
-#Preview {
-    HomeView()
-}
